@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body {
+  height: 100%;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #111112;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.search {
+  display: inline-flex;
+  align-items: center;
+  background-image: linear-gradient(40deg, #040404, #7b0bec);
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%; /* Circular shape */
+  border: 1px solid #c31a1a;
+  width: 50px; /* Adjust the initial width as needed */
+  overflow: hidden;
+  transition: width 0.5s, border-radius 0.5s; /* Transition to change the width and shape */
+}
+.search :is(input, button) {
+  background: transparent;
+  color: inherit;
+  border: none;
+  outline: none;
+}
+.search__input {
+  width: 0;
+  transition: width 0.5s;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.search__button {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 30px; /* Make the button a square shape */
+  cursor: pointer;
+  transition: color 0.25s;
+}
+.search__button i {
+  font-size: 16px;
+}
+.search__button:hover {
+  color: #e3e3e3;
+}
+/* Change to full width when focused */
+.search:focus-within {
+  border-radius: 4px; /* Final shape: Rectangular */
+  width: 200px; /* Adjust the final width as needed */
+}
+/* Change to full width when focused */
+.search:focus-within .search__input {
+  width: 100%; /* Full width when focused */
+}
