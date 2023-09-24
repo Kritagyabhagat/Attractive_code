@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #151515;
+}
+.main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 170px;
+}
+.main .navigation {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  border-radius: 50%; /* Make dots circular */
+}
+/* Use emojis as content with different colors */
+.main .navigation span:nth-child(1) {
+  background: #FF5733; /* Color for the first emoji */
+  content: "\1F60D"; /* Emoji: 😍 */
+}
+.main .navigation span:nth-child(2) {
+  background: #FF5733; /* Color for the second emoji */
+  content: "\1F609"; /* Emoji: 😉 */
+}
+.main .navigation span:nth-child(3) {
+  background: #FF5733; /* Color for the third emoji */
+  content: "\1F603"; /* Emoji: 😃 */
+}
+
+.main .navigation span:nth-child(4) {
+  background: #FF5733; /* Color for the fourth emoji */
+  content: "\1F60E"; /* Emoji: 😎 */
+}
+.main .navigation span:nth-child(5) {
+  background: #FF5733; /* Color for the fifth emoji */
+  content: "\1F602"; /* Emoji: 😂 */
+}
+.main .navigation span:nth-child(6) {
+  background: #FF5733; /* Color for the sixth emoji */
+  content: "\1F61E"; /* Emoji: 😞 */
+}
+.main .navigation span:nth-child(7) {
+  background: #FF5733; /* Color for the seventh emoji */
+  content: "\1F609"; /* Emoji: 😉 */
+}
+.main .navigation span:nth-child(8) {
+  background: #FF5733; /* Color for the eighth emoji */
+  content: "\1F60A"; /* Emoji: 😊 */
+}
+.main .navigation span:nth-child(9) {
+  background: #FF5733; /* Color for the ninth emoji */
+  content: "\1F60D"; /* Emoji: 😍 */
+}
+/* ... Repeat for the other spans with different emojis and colors ... */
+/* Additional styling for the animation */
+.main .navigation span {
+  position: absolute;
+  width: 30px; /* Adjust the size of the dots */
+  height: 30px; /* Adjust the size of the dots */
+  background: #FF5733; /* Set a constant color for dots */
+  border-radius: 50%; /* Make dots circular */
+  transform: translate(calc(14px * var(--x)), calc(14px * var(--y)));
+  transition: transform 0.5s, width 0.5s, height 0.5s, background 0.5s;
+  transition-delay: calc(0.1s * var(--i));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .navigation.active span {
+  width: 45px;
+  height: 45px;
+  background: #37384f; /* Change the background color on activation */
+  transform: translate(calc(60px * var(--x)), calc(60px * var(--y)));
+}
+.main .navigation span ion-icon {
+  transition: 0.5s;
+  font-size: 0em;
+  color: #fff;
+}
+.main .navigation.active span ion-icon {
+  font-size: 1.35em;
+}
+.main .navigation.active span:hover ion-icon {
+  color: #ed5522;
+  filter: drop-shadow(0 0 2px #ea470c) drop-shadow(0 0 5px #e45806)
+    drop-shadow(0 0 15px #f05c0d);
+}
+.close {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: #fff;
+  transition: 0.5s;
+  transition-delay: 0.4s;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .navigation.active ~ .close {
+  width: 40px;
+  height: 40px;
+  pointer-events: initial;
+  transition-delay: 0.8s;
+  background: #350aa4;
+}
+.main .navigation ~ .close ion-icon {
+  font-size: 2em;
+  scale: 0;
+  color: #10131c;
+  transition: 0.5s;
+}
+.main .navigation.active ~ .close ion-icon {
+  scale: 1;
+  transition-delay: 1s;
+}                                                
